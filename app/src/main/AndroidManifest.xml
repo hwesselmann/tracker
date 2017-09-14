@@ -19,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddPlayerActivity"
+            android:label="@string/title_activity_add_player"
+            android:parentActivityName=".PlayerListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PlayerListActivity"/>
+        </activity>
     </application>
 
 </manifest>
