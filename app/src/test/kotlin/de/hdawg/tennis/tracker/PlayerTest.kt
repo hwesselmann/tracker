@@ -16,9 +16,9 @@ class PlayerTest {
 
     @Test
     fun savePlayer() {
-        assertEquals(PlayerService.playerList.size, 0)
+        assertEquals(PlayerService.getAllPlayers().size, 0)
         val player = Player(1,"Rafael", "Nadal", "none")
         PlayerService.savePlayer(player)
-        assertEquals(PlayerService.playerList.size, 1)
+        assertEquals(PlayerService.getAllPlayers().size, 1)
     }
 }
