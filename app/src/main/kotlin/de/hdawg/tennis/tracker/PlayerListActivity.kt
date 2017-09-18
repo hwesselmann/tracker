@@ -8,12 +8,10 @@ import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
+import org.jetbrains.anko.*
 import android.view.MenuItem
-import android.content.Intent
 
 class PlayerListActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
-    private val ADD_PLAYER_REQUEST = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +21,7 @@ class PlayerListActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
         val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener {
-            val intent = Intent(this, AddPlayerActivity::class.java)
-            startActivityForResult(intent, ADD_PLAYER_REQUEST)
+            startActivity<AddPlayerActivity>()
         }
 
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
