@@ -9,8 +9,13 @@ object PlayerService {
         return playerList
     }
 
-    fun savePlayer(player: Player): Unit {
-        // TODO this is not really saving the player permanently, for now, it is just in memory
-        playerList.add(player)
+    fun savePlayer(player: Player): Map<String, String> {
+        val validationResult= player.validate()
+        if(validationResult.size > 0) {
+            // TODO throw some messages at the caller
+        } else {
+            playerList.add(player)
+        }
+        return validationResult
     }
 }
